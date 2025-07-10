@@ -1,0 +1,146 @@
+/* === BASE RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: #e6e6e6;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* === HEADER === */
+header {
+  background-color: #1a1a1a;
+  padding: 25px;
+  text-align: center;
+  border-bottom: 1px solid #2c2c2c;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #f2f2f2;
+}
+
+nav {
+  margin-top: 12px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+.discord-btn {
+  background-color: #5865F2;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.discord-btn:hover {
+  background-color: #4752c4;
+}
+
+/* === MAIN SECTION === */
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #e0e0e0;
+}
+
+/* === LEAK GRID === */
+.leak-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* === CARD === */
+.leak-card {
+  background-color: #1b1b1b;
+  border: 1px solid #2c2c2c;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.leak-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.leak-preview {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+  background-color: #000;
+}
+
+.leak-content {
+  padding: 20px;
+}
+
+.leak-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #f4f4f4;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #555;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+}
