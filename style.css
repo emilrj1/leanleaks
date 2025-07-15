@@ -59,6 +59,33 @@ nav a:hover {
   background-color: #4752c4;
 }
 
+.gif-banner {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: #000;
+  border-bottom: 1px solid #333;
+}
+
+.gif-track {
+  display: flex;
+  width: 200%; /* 2x GIF width */
+  animation: scrollGif 20s linear infinite;
+}
+
+.gif-track img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+  
+@keyframes scrollGif {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
 /* === MAIN SECTION === */
 main {
   padding: 40px 20px;
