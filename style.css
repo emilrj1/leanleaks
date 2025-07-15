@@ -61,28 +61,33 @@ nav a:hover {
 
 .gif-banner {
   width: 100%;
-  height: 180px;
   overflow: hidden;
-  background-color: #000;
   border-bottom: 1px solid #333;
+  background-color: #000;
+  height: 180px;
 }
 
-.gif-track {
+.gif-wrapper {
   display: flex;
-  width: 200%; /* 2x GIF width */
-  animation: scrollGif 20s linear infinite;
+  width: calc(200%); /* to billeder */
+  animation: scrollBanner 20s linear infinite;
 }
 
-.gif-track img {
+.gif-wrapper img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
-  
-@keyframes scrollGif {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
+
 
 
 
