@@ -3,51 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lean Leaks | Leaks</title>
+  <title>Lean Leaks | Advanced Leaks</title>
   <link rel="stylesheet" href="style.css" />
+  
+  <script>
+    const scripts = [
+      {
+        id: 'jg',
+        title: 'JG Advanced Garages',
+        video: 'https://www.youtube.com/embed/9dU7TvwwviY',
+        updated: '03-01-2026',
+        author: 'Lean Lars',
+        category: 'GARAGE',
+        description: 'Advanced garage system with modern UI, vehicle preview, shared garages and deep configuration.',
+        features: ['Multi-garage support', 'Vehicle preview UI', 'Shared & private garages'],
+        download: 'https://www.mediafire.com/file/nl6y5uvmbxczi1f/jg-advancedgarages.rar/file'
+      },
+      {
+        id: 'mechanic',
+        title: 'JG Mechanic',
+        video: 'https://www.youtube.com/embed/Zvxozmq3huc',
+        updated: '03-01-2026',
+        author: 'Lean Lars',
+        category: 'MECHANIC',
+        description: 'High-performance mechanic script with fast UI and low resource usage.',
+        features: ['Fast UI', 'Easy config', 'Low resource usage'],
+        download: 'https://www.mediafire.com/file/3kwqc7z2t03i8fg/jg-mechanic.rar/file'
+      },
+        {
+        id: 'prism',
+        title: 'Prism Hud',
+        video: 'https://www.youtube.com/embed/4S9GKnZlCOM',
+        updated: '03-01-2026',
+        author: 'Lean Lars',
+        category: 'HUD',
+        description: 'High-performance hud script with fast UI and low resource usage.',
+        features: ['Fast UI', 'Easy config', 'Low resource usage'],
+        download: 'https://www.mediafire.com/file/xjbd50569yjgqbe/prism_hud.zip/file'
+      }
+    ];
+
+    function renderList() {
+      const grid = document.getElementById('leak-grid');
+      grid.innerHTML = '';
+      scripts.forEach(s => {
+        grid.innerHTML += `
+          <div class="leak-card" onclick="openDetail('${s.id}')">
+            <iframe class="leak-preview" src="${s.video}" frameborder="0" allowfullscreen></iframe>
+            <div class="leak-content">
+              <span class="tag">${s.category}</span>
+              <h3>${s.title}</h3>
+              <p class="meta">Updated: ${s.updated} • Leaked by ${s.author}</p>
+              <span class="download-btn">View Details</span>
+            </div>
+          </div>`;
+      });
+    }
+
+    function openDetail(id) {
+      const s = scripts.find(x => x.id === id);
+      document.getElementById('list-page').style.display = 'none';
+      const d = document.getElementById('detail-page');
+      d.style.display = 'block';
+      d.innerHTML = `
+        <button class="download-btn" onclick="backToList()">← Back</button>
+        <h2>${s.title}</h2>
+        <p class="meta">${s.category} • Updated ${s.updated} • ${s.author}</p>
+        <iframe class="leak-preview" src="${s.video}" frameborder="0" allowfullscreen></iframe>
+        <p class="description">${s.description}</p>
+        <ul class="features">${s.features.map(f => `<li>• ${f}</li>`).join('')}</ul>
+        <a href="${s.download}" target="_blank" class="download-btn">⬇ Download Script</a>`;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function backToList() {
+      document.getElementById('detail-page').style.display = 'none';
+      document.getElementById('list-page').style.display = 'block';
+    }
+
+    window.onload = renderList;
+  </script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Lean Leaks</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="https://discord.gg/HMpFUY9auH" target="_blank" class="discord-btn">Discord</a>
-    </nav>
-  </header>
+<header>
+  <h1>Lean Leaks</h1>
+  <nav>
+    <a href="#" onclick="backToList()">Home</a>
+    <a href="https://discord.gg/HMpFUY9auH" target="_blank" class="discord-btn">Discord</a>
+  </nav>
+</header>
 
-  <main>
-    <h2 class="section-title">Latest Leaks & Uploads</h2>
+<main id="list-page">
+  <h2 class="section-title">Latest Leaks & Uploads</h2>
+  <div class="leak-grid" id="leak-grid"></div>
+</main>
 
-    <div class="leak-grid">
+<main id="detail-page" class="detail-page" style="display:none"></main>
 
-      <!-- Leak 1 -->
-      <div class="leak-card">
-        <iframe class="leak-preview" src="https://www.youtube.com/embed/VgRMwc5XZG8" frameborder="0" allowfullscreen></iframe>
-        <div class="leak-content">
-          <h3>Redirect Banking</h3>
-          <p class="meta">Updated: 11-07-2025 • Leaked by Lean Lars</p>
-          <a href="https://www.mediafire.com/file/rjrxlwj5kgp4ssp/redirect_banking.rar/file" class="download-btn" target="_blank">⬇ Download Script</a>
-        </div>
-      </div>
-
-      <!-- Leak 2 -->
-      <div class="leak-card">
-        <iframe class="leak-preview" src="https://www.youtube.com/embed/__QRZbnj6xc" frameborder="0" allowfullscreen></iframe>
-        <div class="leak-content">
-          <h3>Zaki Garage</h3>
-          <p class="meta">Updated: 11-07-2025 • Leaked by Lean Lars</p>
-          <a href="https://www.mediafire.com/file/gmebshpccmf2s9c/zaki_garage.rar/file" class="download-btn" target="_blank">⬇ Download Script</a>
-        </div>
-      </div>
-
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Lean Leaks. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Lean Leaks. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
